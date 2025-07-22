@@ -79,5 +79,52 @@
 </header>
 
 <section class="gallery">
-  <img src="IMG_3167.jpeg"_
+  <img src="thai_tea1.jpg" alt="ชาไทย 1">
+  <img src="thai_tea2.jpg" alt="ชาไทย 2">
+  <img src="thai_tea3.jpg" alt="ชาไทย 3">
+</section>
+
+<section class="order-section">
+  <h2>สั่งชาไทยของคุณ</h2>
+  <form>
+    <label for="topping">เพิ่มท็อปปิ้ง:</label>
+    <select id="topping" name="topping" onchange="updatePrice()">
+      <option value="none">ไม่ใส่ (35 บาท)</option>
+      <option value="whip">วิปครีม (40 บาท)</option>
+      <option value="cheese">ครีมชีส (45 บาท)</option>
+    </select>
+
+    <label for="sweetness">ระดับความหวาน:</label>
+    <select id="sweetness" name="sweetness">
+      <option value="no_sugar">ไม่หวาน</option>
+      <option value="less_sugar">หวานน้อย</option>
+      <option value="normal_sugar">ปกติ</option>
+      <option value="extra_sugar">หวานมาก</option>
+    </select>
+
+    <div class="price" id="price">ราคาทั้งหมด: 35 บาท</div>
+
+    <button type="submit">สั่งเลย</button>
+  </form>
+</section>
+
+<script>
+  function updatePrice() {
+    const topping = document.getElementById("topping").value;
+    const priceElement = document.getElementById("price");
+    let price = 35;
+
+    if (topping === "whip") {
+      price = 40;
+    } else if (topping === "cheese") {
+      price = 45;
+    }
+
+    priceElement.innerText = "ราคาทั้งหมด: " + price + " บาท";
+  }
+</script>
+
+</body>
+</html>
+
 
